@@ -1,0 +1,14 @@
+for Windows:
+  step 1:
+    CMD-pip3 install PyInstaller
+  step 2:
+    Using command "python3 **.py" firstly,it will point out which module is not exist.
+  step 3:
+    pip3 install ---(the module you need)
+  step 4:
+    pyinstaller -F -w **.py
+    
+-F, -onefile, 打包成一个exe文件
+-D, -onefir,  创建一个目录，包含exe文件，但会依赖很多文件（默认选项）
+-c, -console, -nonwindowed, 使用控制台，无窗口（默认）
+-w, -windowed, -noconsole, 使用窗口，无控制台
