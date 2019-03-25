@@ -1,0 +1,24 @@
+from functools import wraps
+#固定格式，写三个嵌套函数；
+#第一个函数可以传入任意参数
+#第二个函数为固定写法
+#第三个函数为固定写法
+#三个返回值也是固定写法
+def log(text):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kw):
+            print('%s %s():' % (text, func.__name__))
+            print("func.__name__:",func.__name__)
+            print("func.__doc__:",func.__doc__)
+            print("func.__annotations:",func.__annotations__)
+            return func(*args, **kw)
+        return wrapper
+    return decorator
+    
+    
+使用
+
+@log（‘aaa’）
+def add（x,y）:
+  return x+y
