@@ -1,8 +1,11 @@
 for Windows:
   step 1:
     CMD-pip3 install PyInstaller
+    CMD要以管理员身份运行
   step 2:
-    Using command "python3 **.py" firstly,it will point out which module is not exist.
+    Using command "python **.py" firstly,it will point out which module is not exist.
+    如果python命令没有，需要添加系统路径
+    右键我的电脑->属性->高级系统配置->点击高级一栏，在这里栏点开环境变量->在系统变量PATH加入python的安装路径即可，比如我的就是D:\Python27
   step 3:
     pip3 install ---(the module you need)
   step 4:
