@@ -1,0 +1,10 @@
+Timer：
+from PyQt5.QtCore import QTimer
+self.timer=QTimer(self)
+self.timer.timeout.connect(self.showTime)#时间间隔之后，调用showTime（）方法
+self.timer.start(500)#单位是ms，设置时间间隔，并启动
+self.timer.stop()
+
+时间：
+time=PyQt5.QtCore.QDateTime.currentDateTime()
+timeDisplay=time.toString("yyyy-MM-dd hh:mm:ss dddd")
