@@ -1,0 +1,2 @@
+time=PyQt5.QtCore.QDateTime.currentDateTime()
+timeDisplay=time.toString("yyyy-MM-dd hh:mm:ss dddd")
