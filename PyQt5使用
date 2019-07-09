@@ -8,3 +8,18 @@ self.timer.stop()
 时间：
 time=PyQt5.QtCore.QDateTime.currentDateTime()
 timeDisplay=time.toString("yyyy-MM-dd hh:mm:ss dddd")
+
+图形编辑界面：
+1.保存form.ui
+2.命令行输入“pyuic5 form.ui -o form.py”
+3.python中， from form import Ui_form
+4.新建类:class myform(Ui_form,QWidget),注意：图形界面用的什么，第二个位置就继承什么
+            def __init__(self):
+                  super(myform,self).__init__()#调用父类的构造函数
+                  self.setupUi(self)
+        app=PyQt5.QtWidgets.QApplication(sys.argv)
+        mywindow=myform()
+        mywindow.show()
+        app.exec_()
+        sys.exit()#括号里可以写退出窗口后执行的内容
+ 
