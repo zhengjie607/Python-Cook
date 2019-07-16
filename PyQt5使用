@@ -23,3 +23,6 @@ timeDisplay=time.toString("yyyy-MM-dd hh:mm:ss dddd")
         app.exec_()
         sys.exit()#括号里可以写退出窗口后执行的内容
  
+QFileDialog打开文件对话框
+dlg=QtWidgets.QFileDialog()
+f=dlg.getOpenFileName(self,'Open File','.','GCode file (*.gcode)')#f[0]是路径,f[1]是文件类型
