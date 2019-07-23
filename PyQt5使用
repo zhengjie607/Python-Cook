@@ -26,3 +26,20 @@ timeDisplay=time.toString("yyyy-MM-dd hh:mm:ss dddd")
 QFileDialog打开文件对话框
 dlg=QtWidgets.QFileDialog()
 f=dlg.getOpenFileName(self,'Open File','.','GCode file (*.gcode)')#f[0]是路径,f[1]是文件类型
+
+
+PyQtGraph使用
+from pyqtgraph import GraphicsLayoutWidget#这就是一个Widget控件
+class mygraph(GraphicsLayoutWidget):
+  def __init__(self):
+    super(mygraph,self).__init__()
+    self.analyse = self.addPlot(row=1, col=0)#这句话代表增加绘制表格，在整个布局中占第一行
+    self.analyse.setLabel("left","Temperature","℃")#设置标签
+    self.analyse.setLabel("bottom","Time","s")
+    self.analyse.addLegend()#增加图标
+    self.analyse.plot([0],pen=(0,128,0),symbolBrush=(0,128,0),  symbol='t', symbolSize=14,name="\\      开始打印")
+    #第一个参数是x数据，这里没写，默认从0开始，第二个参数是Y，第三个参数的画笔颜色，第四个是笔刷颜色，第五个是符号形状，第六个是尺寸，第七个是名称，
+    名称在clear()函数之后不清空
+    self.analyse.clear()
+    self.analyse.scene().sigMouseMoved.connect(self.mouseMoved)#绑定鼠标移动的函数
+    self.current_temp = self.addPlot(row=2, col=0))#这句话代表增加绘制表格，在整个布局中占第二行
