@@ -1,0 +1,12 @@
+import logging
+logging.basicConfig(filename='',filemode='a',format='%(asctime)s-%(filename)s-%(levelname)s:%(message)s',
+                    level = logging.DEBUG,datefmt='%Y-%m-%d%I:%M:%S %p')
+#filemode中'a'为追加。
+#format中，分别代表时间，文件名（*.py），等级和内容。
+#等级分为NOTSET（0）、DEBUG（10）、INFO（20）、WARNING（30）、ERROR（40）、CRITICAL（50）。logging 执行时输出大于等于设置的日志级别的日志信息
+#datefmt代表年月日 时分秒 上下午
+logging.debug("")
+logging.info("")
+logging.warning("")
+logging.error("")
+logging.critical("")
