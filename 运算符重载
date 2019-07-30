@@ -1,0 +1,7 @@
+__eq__(self,other)
+__add__(self,other)
+__mul__(self,other)
+__sub__(self,other)
+__div__(self,other)
+__lt__(self,other)小于
+__gt__(self,other)大于
