@@ -43,3 +43,16 @@ class mygraph(GraphicsLayoutWidget):
     self.analyse.clear()
     self.analyse.scene().sigMouseMoved.connect(self.mouseMoved)#绑定鼠标移动的函数
     self.current_temp = self.addPlot(row=2, col=0))#这句话代表增加绘制表格，在整个布局中占第二行
+    
+QProgressBar 进度条
+setMinimum()
+setMaximum()
+setOrientation()设置方向，Qt.Horizontal和Qt.Vertical
+setFormat("%v")#设置显示数字
+％p - 被完成的百分比取代
+％v - 被当前值替换
+％m - 被总step所取代
+默认值是”％p％”
+setInvertedAppearance(True)，行进方向
+最大最小值都设为0，则是繁忙指示
+
