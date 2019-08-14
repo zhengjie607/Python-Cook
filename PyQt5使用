@@ -56,3 +56,14 @@ setFormat("%v")#设置显示数字
 setInvertedAppearance(True)，行进方向
 最大最小值都设为0，则是繁忙指示
 
+
+读文件新线程
+PyQt5.QtCore import QThread,pyqtSignal
+新建一个类，继承QThread
+定义一个信号属性sinout=pyqtSignal（int）
+需要运行的代码在run()函数中即可
+在函数中可以使用sinout.emit()来发送信号
+
+在别的地方使用，先将类初始化
+然后绑定sinout.connect()
+在需要开启线程的时候，调用start()
