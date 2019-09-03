@@ -67,3 +67,13 @@ PyQt5.QtCore import QThread,pyqtSignal
 在别的地方使用，先将类初始化
 然后绑定sinout.connect()
 在需要开启线程的时候，调用start()
+
+使用摄像头
+from PyQt5.QtMultimedia import QCamera#摄像头类
+
+
+from PyQt5.QtMultimediaWidgets import QCameraViewfinder#装摄像头类的Widget
+cam=QCamera(self)#摄像头类
+camera=QCameraViewfinder(self)#装摄像头的Widget
+cam.setViewfinder(camera)
+cam.start()
