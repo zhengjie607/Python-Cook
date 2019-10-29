@@ -15,3 +15,5 @@ for Windows:
 -D, -onefir,  创建一个目录，包含exe文件，但会依赖很多文件（默认选项）
 -c, -console, -nonwindowed, 使用控制台，无窗口（默认）
 -w, -windowed, -noconsole, 使用窗口，无控制台
+
+注意：在使用多进程时，一定要在if __name__=='__main__:'下添加一句multiprocessing.freeze_support()
