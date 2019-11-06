@@ -77,3 +77,17 @@ cam=QCamera(self)#摄像头类
 camera=QCameraViewfinder(self)#装摄像头的Widget
 cam.setViewfinder(camera)
 cam.start()
+
+
+ToolBar使用：
+action=QtWidgets.QAction(QtGui.QIcon('./resource/toolbar/move.ico')
+action.setShortcut('Ctrl+Q')
+action.triggered.connect()
+self.toolBar.addAction(action,'打开文件',self))
+self.toolBar.actionTriggered[QtWidgets.QAction].connect(self.toolbarpress)
+
+addSeperator()#分组显示工具按钮
+addWidget()#添加其他控件
+addToolBar()#增加一个新的工具栏
+setMovable()#工具栏可移动
+setOrientation()#方向，分别为Qt.Horizontal  Qt.vertical
