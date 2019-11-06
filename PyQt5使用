@@ -80,6 +80,7 @@ cam.start()
 
 
 ToolBar使用：
+self.toolBar.setIconSize(QtCore.QSize(32,32))#设置图标大小
 action=QtWidgets.QAction(QtGui.QIcon('./resource/toolbar/move.ico')
 action.setShortcut('Ctrl+Q')
 action.triggered.connect()
