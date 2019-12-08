@@ -43,6 +43,19 @@ urlpatterns路由规则列表
 然后在settings中TEMPLATES的DIRS中加入os.path.join(BASE_DIR,'templates')
 
 
+
+models.py
+class a(models.Model):
+  name=models.CharField(max_length=16)
+  age=models.IntegerField(default=1)
+  迁移
+  python manage.py makemigrations
+  python manage.py migrate
+  如何用？
+  s=Student()
+  s.name='aa'
+  s.age=10
+  s.save()
 #问题
 That port is already in use.
 ps aux|grep -i manage#查找pid
