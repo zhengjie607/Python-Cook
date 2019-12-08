@@ -25,6 +25,13 @@ path()#第一个参数界面路由，第二个为views内一个函数
 
 views实现，函数第一个参数是request
 永远记得返回Reponse
+优化
+拆分多个app，urls
+在app中创建自己的urls
+urlpatterns路由规则列表
+
+
+
 
 #使用模版
 1.在App下新建templates文件夹
