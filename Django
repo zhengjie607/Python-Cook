@@ -59,8 +59,9 @@ class a(models.Model):
   s.name='aa'
   s.age=10
   s.save()
-  显示
+  查找数据
   s=Student.object.all()
+  Student.object.get()#按条件查找
 #问题
 That port is already in use.
 ps aux|grep -i manage#查找pid
