@@ -54,14 +54,19 @@ class a(models.Model):
   python manage.py makemigrations
   python manage.py migrate
   如何用？
+  
   数据插入
   s=Student()
   s.name='aa'
   s.age=10
   s.save()
+  
   查找数据
   s=Student.object.all()
   Student.object.get()#按条件查找
+  
+  删除
+  s.delete()
 #问题
 That port is already in use.
 ps aux|grep -i manage#查找pid
