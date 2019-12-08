@@ -1,0 +1,11 @@
+安装：pip install django==2.2.7
+
+django-admin startproject weixin #创建工程
+cd weixin
+python manage.py startapp App#
+
+
+
+
+
+python manage.py runserver#启动服务,自带开发者服务器，上线不用
