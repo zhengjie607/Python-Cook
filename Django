@@ -4,8 +4,39 @@ django-admin startproject weixin #创建工程
 cd weixin
 python manage.py startapp App#
 
+python manage.py migrate#迁移
 
 
 
+python manage.py runserver#启动服务,自带开发者服务器，上线不用 0.0.0.0:8000所有人能访问
 
-python manage.py runserver#启动服务,自带开发者服务器，上线不用
+
+
+settings.py#相关设置
+INSTALLED_APPS,#注册
+LANGUAGE_CODE = 'zh-hans'
+TIME_ZONE = 'Asia/Shanghai'
+
+urls.py#路由
+
+from App import views
+
+path()#第一个参数界面路由，第二个为views内一个函数
+
+views实现，函数第一个参数是request
+永远记得返回Reponse
+
+#使用模版
+1.在App下新建templates文件夹
+新建index.html
+在views 函数返回值return render(request,'index.html')
+在 url中,路由views
+2.在工程目录创建文件夹
+#跟manage.py同级templates
+然后在settings中TEMPLATES的DIRS中加入os.path.join(BASE_DIR,'templates')
+
+
+#问题
+That port is already in use.
+ps aux|grep -i manage#查找pid
+kill -9 <pid>
