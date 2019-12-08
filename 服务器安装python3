@@ -1,0 +1,25 @@
+第一、安装依赖包
+yum update -y
+yum -y groupinstall "Development tools"
+yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+第二、编译安装Python3.6.5
+mkdir /usr/local/python3
+wget https://www.python.org/ftp/python/3.6.5/Python-3.6.5.tar.xz
+tar -xvJf Python-3.6.5.tar.xz
+cd Python-3.6.5
+./configure prefix=/usr/local/python3
+make && make install
+ln -s /usr/local/python3/bin/python3 /usr/bin/python3
+ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3
+
+第四、如何设置默认Python3.6.5
+
+如果我们需要设置默认python直接运行默认的Python3.6.5版本，那需要简单调整软链接。
+
+cd /usr/local/
+mv python python.bak
+mv pip pip.bak
+备份默认文件。
+
+ln -s /usr/local/python3/bin/python3 /usr/bin/python
+ln -s /usr/local/python3/bin/pip3 /usr/bin/pip
