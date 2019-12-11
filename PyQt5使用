@@ -92,3 +92,43 @@ addWidget()#添加其他控件
 addToolBar()#增加一个新的工具栏
 setMovable()#工具栏可移动
 setOrientation()#方向，分别为Qt.Horizontal  Qt.vertical
+
+CSS使用
+#QSS 选择器
+#（1） 通配选择器：*，匹配所有的控件
+#（2） 类型选择器：QPushButton，匹配所有的QPushButton类及其子类
+#（3） 属性选择器：QPushButton[name="myBtn"]，匹配所有的name属性是myBtn的实例，该属性是自定义的
+#             例：btn=QPushButton(self)
+#                 btn.setProperty('name','myBtn')
+#（4） 类选择器：.QPushButton，匹配所有QPushButton，但不匹配子类
+#（5） ID选择器： #myButton，匹配所有ID为myButton的控件，ID指的是objectName
+#（6） 后代选择器：QDialog QPushButton，匹配所有QDialog容器中包含的QPushButton，不管直接还是间接
+#（7） 子选择器：QDialog>QPushButton，匹配所有QDialog容器中包含的QPushButton，其中要求QPushButton的直接父容器是QDialog
+#联合使用：#a,#b,#c,表示这些ID使用一个规则；#a QPushButton，表示所有ID为a的容器中包含的QPushButton
+伪类选择器
+1、:checked: 按钮控件被选中
+2、:unchecked:按钮控件未被选中
+3、:indeterminate:对于checkBox或者redioButton部分选中(三态的时候)
+4、:hover:控件被鼠标放上去
+5、:pressed:控件被按下
+6、:focus:控件获取焦点
+7、:disabled:控件禁用
+8、:enabled:控件有效的时候
+9、:on:控件属于on状态
+10、:off: 控件处于off状态
+11、关于伪类取反的操作:!checked
+12、伪类连接使用:hover:checked表示鼠标在上面且被选中
+myStyle='''
+        #btn_infill{
+            border-image:url(resource/填充normal.png)
+            }
+        #btn_infill:hover{
+            border-image:url(resource/填充hover.png)
+            }
+        #btn_infill:pressed{
+            border-image:url(resource/填充click.png)
+            }
+            '''
+            
+  然后在主程序中
+app.setStyleSheet(myStyle)
