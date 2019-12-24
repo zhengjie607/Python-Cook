@@ -47,3 +47,11 @@ pyinstaller xxxx.py --console
 -n NAME, –name=NAME	可选的项目 ( 产生的 spec 的 ) 名字 . 如果省略 , 第一个脚本的主文件名将作为 spec 的名字
 
 
+在执行命令 pyinstaller -D -w xxx.py打包生成.exe文件时报错：python maximum recursion depth exceeded
+命令行输入：pyi-makespec --D -w xxx.py，会生成一个xxx.spec文件
+找到xxx.spec这个文件给它的第二行插入下面两行代码
+
+import sys
+重新编译生成命令行输入：pyinstaller -D -w xxx.spec即可
+sys.setrecursionlimit(50000)
+
