@@ -136,6 +136,54 @@ app.setStyleSheet(myStyle)
 
 
 动画
+1、定义动画的主要步骤
+
+创建一个动画,并设置目标、属性
+设置属性值的开始、插值、结束
+动画时长
+启动动画
+
+
+
+2、构造函数使用方式
+
+1.QPropertyAnimation(parent: QObject = None)
+
+设置动画目标:setTargetObject(self, QObject)
+设置动画属性(位置、大小等):setPropertyName(self, Union[QByteArray, bytes, bytearray])
+
+
+2.QPropertyAnimation(QObject, Union[QByteArray, bytes, bytearray], parent: QObject = None)
+
+
+
+3、常见的属性
+
+geometry
+pos
+size
+windowOpacity
+
+
+
+4、设置开始值和结束值
+
+setStartValue(self, Any)
+setEndValue(self, Any)
+setKeyValueAt(self, float, Any)
+setKeyValues(self, object)
+
+
+
+5、设置动画时长
+
+setDuration(int mesc)
+
+
+
+6、启动动画
+
+start()
 from PyQt5.QtCore import QPropertyAnimation
 from PyQt5.QtWidgets import QWidget
 class Window(QWidget):
