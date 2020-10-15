@@ -1,3 +1,5 @@
 1.pip install matplotlib==3.2.2
 2.修改Python\Lib\site-packages\Pyinstaller\compat.py
 out = out.decode(encoding) 为out = out.decode(encoding, errors='ignore')，可解决编码问题
+pyinstaller 版本3.6
+python版本3.7.6
