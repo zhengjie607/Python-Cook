@@ -1,0 +1,18 @@
+中国科学技术大学 : https://pypi.mirrors.ustc.edu.cn/simple
+清华：https://pypi.tuna.tsinghua.edu.cn/simple
+豆瓣：http://pypi.douban.com/simple/
+华中理工大学 : http://pypi.hustunique.com/simple
+山东理工大学 : http://pypi.sdutlinux.org/simple
+在cmd下set找到userprofile路径，再改路径下创建pip文件夹和pip.ini
+
+è¿éåå¾çæè¿°
+
+pip.ini具体配置
+
+[global]
+
+timeout = 6000
+
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+
+trusted-host = pypi.tuna.tsinghua.edu.cn
