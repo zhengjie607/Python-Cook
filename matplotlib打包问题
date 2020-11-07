@@ -5,3 +5,6 @@ pyinstaller 版本3.6
 python版本3.7.6
 pip install pypiwin32
 pip install wxpython
+pip install tornado
+pip install pycairo
+pip install ipython
