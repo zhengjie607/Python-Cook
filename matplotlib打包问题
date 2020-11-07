@@ -9,3 +9,4 @@ pip install tornado
 pip install pycairo
 pip install ipython
 pip install ipykernel
+pip install pygobject
