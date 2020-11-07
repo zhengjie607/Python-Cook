@@ -3,3 +3,5 @@
 out = out.decode(encoding) 为out = out.decode(encoding, errors='ignore')，可解决编码问题
 pyinstaller 版本3.6
 python版本3.7.6
+pip install pypiwin32
+pip install wxpython
