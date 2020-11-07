@@ -8,3 +8,4 @@ pip install wxpython
 pip install tornado
 pip install pycairo
 pip install ipython
+pip install ipykernel
