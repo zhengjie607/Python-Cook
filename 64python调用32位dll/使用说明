@@ -1,1 +1,9 @@
 
+安装
+pip install msl-loadlib    或    直接复制文件夹“msl”
+
+1.在需要调用的dll同级目录下，新建一个*32.py的文件，参照例子“extmdl32.py”。创建一个类，继承“Server32”，初始化参数传入dll名称（不带后缀），指明调用方式（cdll或windll）。然后重写dll中所有的函数。
+  char* 类型用ctypes.create_string_buffer(b'*')，函数返回值要指定类型restype = 。
+  
+2.在同级目录下，新建一个*64.py的文件，参照例子“extmdl64.py”。创建一个类，继承“Client64”。初始化参数传入*32.py的文件名（带不带后缀均可）。再次重写dll中所有的函数，函数下执行self.request32（），
+  传入的第一个参数为函数名的字符串，后面跟着参数
