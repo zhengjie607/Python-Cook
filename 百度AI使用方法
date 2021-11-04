@@ -1,0 +1,61 @@
+1. 去百度AI平台申请接口，点击控制台
+2. 创建应用，获取APIKey和SecretKey
+3. 用上述获取内容获取token。使用如下
+请求URL数据格式
+
+向授权服务地址https://aip.baidubce.com/oauth/2.0/token发送请求（推荐使用POST），并在URL中带上以下参数：
+
+grant_type： 必须参数，固定为client_credentials；
+client_id： 必须参数，应用的API Key；
+client_secret： 必须参数，应用的Secret Key；
+例如：https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=Va5yQRHlA4Fq5eR3LT0vuXV4&client_secret=0rDSjzQ20XUj5itV6WRtznPQSzr5pVw2&
+
+import requests 
+
+# client_id 为官网获取的AK， client_secret 为官网获取的SK
+host = 'https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=【官网获取的AK】&client_secret=【官网获取的SK】'
+response = requests.get(host)
+if response:
+    print(response.json())
+    
+服务器返回的JSON文本参数如下：
+
+access_token： 要获取的Access Token；
+expires_in： Access Token的有效期(秒为单位，有效期30天)；
+其他参数忽略，暂时不用;
+
+4. 然后使用接口，以图像识别组合API为例
+import requests
+
+'''
+图像识别组合API
+'''
+
+request_url = "https://aip.baidubce.com/api/v1/solution/direct/imagerecognition/combination"
+
+params = "{\"imgUrl\":\"【网络图片地址】\",\"scenes\":[\"animal\",\"plant\",\"ingredient\",\"dishs\", \"red_wine\",\"currency\",\"landmark\"]}"
+access_token = '[调用鉴权接口获取的token]'
+request_url = request_url + "?access_token=" + access_token
+headers = {'content-type': 'application/json'}
+response = requests.post(request_url, data=params, headers=headers)
+if response:
+    print (response.json())
+    
+返回说明
+返回参数
+
+字段	类型	是否必须	说明
+log_id	uint64	是	唯一的log id，用于问题定位。
+result	object	是	返回结果json串，其内包含要调用的各个模型服务的返回结果。
+advanced_general	object	否	「通用物体和场景识别」服务返回结果。请参照“通用物体和场景识别接口文档”
+object_detect	object	否	「图像单主体检测」服务返回结果。请参照“图像单主体检测接口文档”
+multi_object_detect	object	否	「图像多主体检测」服务返回结果。请参照“图像多主体检测接口文档”
+animal	object	否	「动物识别」服务返回结果。请参照“动物识别接口文档”
+plant	object	否	「植物识别」服务返回结果。请参照“植物识别接口文档”
+logo_search	object	否	「logo识别-检索」服务返回结果。请参照“logo识别-检索接口文档)”
+ingredient	object	否	「果蔬识别」服务返回结果。请参照“果蔬识别接口文档”
+dish_search	object	否	「自定义菜品识别-检索」服务返回结果。请参照“自定义菜品识别-检索接口文档”
+dishs	object	否	「菜品识别」服务返回结果。请参照“菜品识别接口文档”
+red_wine	object	否	「红酒识别」服务返回结果。请参照“红酒识别接口文档”
+currency	object	否	「货币识别」服务返回结果。请参照“货币识别接口文档”
+landmark	object	否	「地标识别」服务返回结果。请参照“地标识别接口文档”
